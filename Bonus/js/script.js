@@ -1,7 +1,7 @@
 //creo l'array di oggetti rappresentante i membri del team
-let teams = [
+let team = [
     {
-        name: "Wayne Barnet",
+        name: "Wayne Barnett",
         role: "Founder & CEO",
         image: "wayne-barnett-founder-ceo.jpg"
     },
@@ -31,3 +31,23 @@ let teams = [
         image: "barbara-ramos-graphic-designer.jpg"
     }
 ];
+
+let rowCards = document.getElementById('row-card');
+
+for(let i = 0; i <team.length; i++){
+    let member = team[i];
+    let col = document.createElement('div');
+    col.classList.add('col-4');
+    rowCards.append(col);
+
+    col.innerHTML = `
+    <div class="card text-start">
+    <img class="card-img-top" src="./img/${member.image}"/>
+        <div class="card-body bg-white text-center p-2">
+            <h4>${member.name}</h4>
+            <p>${member.role}</p>
+        </div>
+    </div>
+    `;
+
+}
