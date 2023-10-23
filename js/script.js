@@ -43,7 +43,7 @@ for(let i = 0; i < team.length; i++){
     let member = team[i];
     console.log(`Nome: ${member.name} - Ruolo: ${member.role} - Immagine: ${member.image}`);
     let box = document.createElement('div');
-    box.innerText = `Nome: ${member.name} - Ruolo: ${member.role} - Immagine: ${member.image}`;
+    box.innerText = ` ${member.name} - ${member.role} - ${member.image}`;
     container.appendChild(box);
     printImg(team[i]);
 }
