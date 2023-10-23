@@ -1,7 +1,7 @@
 //creo l'array di oggetti rappresentante i membri del team
 let team = [
     {
-        name: "Wayne Barnett",
+        name: "Wayne Barnet",
         role: "Founder & CEO",
         image: "wayne-barnett-founder-ceo.jpg"
     },
@@ -32,22 +32,51 @@ let team = [
     }
 ];
 
-let rowCards = document.getElementById('row-card');
+const rowEl = document.querySelector('.row');
+console.log(rowEl);
 
-for(let i = 0; i <team.length; i++){
-    let member = team[i];
-    let col = document.createElement('div');
-    col.classList.add('col-4');
-    rowCards.append(col);
 
-    col.innerHTML = `
+
+for (let i = 0; i < team.length; i++) {
+    printCol(team[i]);
+
+}
+
+
+function printCol(team) {
+    const col = document.createElement('div');
+    col.classList.add('col-4')
+    const template = `
     <div class="card text-start">
-    <img class="card-img-top" src="./img/${member.image}"/>
-        <div class="card-body bg-white text-center p-2">
-            <h4>${member.name}</h4>
-            <p>${member.role}</p>
+        <img src="./img/${team.image}" />
+        <div class="card-body bg-white p-2">
+        <h4>${team.name}</h4>
+        <p>${team.role}</p>
         </div>
     </div>
     `;
+    col.innerHTML = template;
+    rowEl.append(col);
 
+}
+
+
+const btn = document.querySelector('button');
+btn.addEventListener('click', function () {
+    const newMember = {
+        name: document.getElementById('name').value,
+        role: document.getElementById('role').value,
+        image: document.getElementById('image').value,
+    }
+
+    console.log(newMember);
+    team.push(newMember);
+    printCol(newMember);
+    reset();
+});
+
+function reset() {
+    document.getElementById('name').value = '';
+    document.getElementById('role').value = '';
+    document.getElementById('image').value = '';
 }
