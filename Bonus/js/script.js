@@ -1,7 +1,7 @@
 //creo l'array di oggetti rappresentante i membri del team
 let team = [
     {
-        name: "Wayne Barnet",
+        name: "Wayne Barnett",
         role: "Founder & CEO",
         image: "wayne-barnett-founder-ceo.jpg"
     },
@@ -16,7 +16,7 @@ let team = [
         image: "walter-gordon-office-manager.jpg"
     },
     {
-        name: "Angela Lopex",
+        name: "Angela Lopez",
         role: "Social Media Manager",
         image: "angela-lopez-social-media-manager.jpg"
     },
@@ -47,7 +47,7 @@ function printCol(team) {
     const col = document.createElement('div');
     col.classList.add('col-4')
     const template = `
-    <div class="card text-start">
+    <div class="card text-center">
         <img src="./img/${team.image}" />
         <div class="card-body bg-white p-2">
         <h4>${team.name}</h4>
