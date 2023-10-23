@@ -31,3 +31,8 @@ const team = [
         image: 'barbara-ramos-graphic-designer.jpg'
     },
 ];
+
+//Stampo su console, per ogni membro del team, le informazioni di nome, ruolo e stringa della foto
+for(let i = 0; i < team.length; i++){
+    let member = team[i];
+}
