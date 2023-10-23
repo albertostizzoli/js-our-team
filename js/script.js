@@ -56,5 +56,5 @@ function printImg(team){
     <img src="img/${team.image}" alt="">
     `;
     img.innerHTML = template;
-    photoEl.append(img)
+    photoEl.append(img);
 }
